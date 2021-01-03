@@ -1,0 +1,73 @@
+Loop instance: specification-pattern-loop = rd nop nop nop
+Pattern: rd nop nop nop
+
+
+Detailed power analysis
+component	location	operation	type	voltage	key	power
+baseload	periphery	nop	device	vcc	baseload-periphery-nop-device-vcc	   33.8
+baseload	periphery	read	device	vcc	baseload-periphery-read-device-vcc	   11.2
+clock	periphery	nop	device	vperi	clock-periphery-nop-device-vperi	    0.1
+clock	periphery	nop	wire	vperi	clock-periphery-nop-wire-vperi	    2.8
+clock	periphery	read	device	vperi	clock-periphery-read-device-vperi	    0.0
+clock	periphery	read	wire	vperi	clock-periphery-read-wire-vperi	    0.9
+column	core	read	device	vperi	column-core-read-device-vperi	   29.6
+column	core	read	wire	vperi	column-core-read-wire-vperi	   56.5
+control	periphery	nop	device	vperi	control-periphery-nop-device-vperi	    6.8
+control	periphery	nop	wire	vperi	control-periphery-nop-wire-vperi	   28.4
+control	periphery	read	device	vperi	control-periphery-read-device-vperi	    7.2
+control	periphery	read	wire	vperi	control-periphery-read-wire-vperi	   15.9
+data	core	read	device	vperi	data-core-read-device-vperi	    3.4
+data	core	read	wire	varray	data-core-read-wire-varray	   16.3
+data	core	read	wire	vperi	data-core-read-wire-vperi	   26.9
+data	periphery	read	device	vperi	data-periphery-read-device-vperi	   26.4
+data	periphery	read	wire	vperi	data-periphery-read-wire-vperi	   74.7
+senseamp	core	read	device	vperi	senseamp-core-read-device-vperi	    0.2
+senseamp	core	read	wire	vperi	senseamp-core-read-wire-vperi	   10.6
+
+Power by component
+baseload	   45.0
+clock	    3.8
+column	   86.0
+control	   58.3
+data	  147.7
+senseamp	   10.8
+
+Power by location
+core	  143.4
+periphery	  208.2
+
+Power by operation
+nop	   71.8
+read	  279.8
+
+Power by type
+device	  118.7
+wire	  232.9
+
+Power by voltage
+varray	   16.3
+vcc	   45.0
+vperi	  290.3
+
+Power by operation and location
+nop-periphery	   71.8
+read-core	  143.4
+read-periphery	  136.4
+
+Power by operation and type
+nop-device	   40.7
+nop-wire	   31.1
+read-device	   78.0
+read-wire	  201.8
+
+Power by location and voltage
+core-varray	   16.3
+core-vperi	  127.1
+periphery-vcc	   45.0
+periphery-vperi	  163.2
+
+Power by generalized operation, type and location
+column-device-core	   33.1
+column-wire-core	  110.3
+column-device-periphery	   85.5
+column-wire-periphery	  122.6

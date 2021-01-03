@@ -1,0 +1,132 @@
+Loop instance: specification-pattern-loop = wrt act pre nop rd act pre nop wrt act pre nop rd act pre nop wrt nop nop nop rd nop nop nop wrt nop nop nop rd nop nop nop
+Pattern: wrt act pre nop rd act pre nop wrt act pre nop rd act pre nop wrt nop nop nop rd nop nop nop wrt nop nop nop rd nop nop nop
+
+
+Detailed power analysis
+component	location	operation	type	voltage	key	power
+baseload	periphery	activate	device	vcc	baseload-periphery-activate-device-vcc	    5.6
+baseload	periphery	nop	device	vcc	baseload-periphery-nop-device-vcc	   22.5
+baseload	periphery	precharge	device	vcc	baseload-periphery-precharge-device-vcc	    5.6
+baseload	periphery	read	device	vcc	baseload-periphery-read-device-vcc	    5.6
+baseload	periphery	write	device	vcc	baseload-periphery-write-device-vcc	    5.6
+clock	periphery	activate	device	vperi	clock-periphery-activate-device-vperi	    0.0
+clock	periphery	activate	wire	vperi	clock-periphery-activate-wire-vperi	    0.5
+clock	periphery	nop	device	vperi	clock-periphery-nop-device-vperi	    0.0
+clock	periphery	nop	wire	vperi	clock-periphery-nop-wire-vperi	    1.8
+clock	periphery	precharge	device	vperi	clock-periphery-precharge-device-vperi	    0.0
+clock	periphery	precharge	wire	vperi	clock-periphery-precharge-wire-vperi	    0.5
+clock	periphery	read	device	vperi	clock-periphery-read-device-vperi	    0.0
+clock	periphery	read	wire	vperi	clock-periphery-read-wire-vperi	    0.5
+clock	periphery	write	device	vperi	clock-periphery-write-device-vperi	    0.0
+clock	periphery	write	wire	vperi	clock-periphery-write-wire-vperi	    0.5
+column	core	read	device	vperi	column-core-read-device-vperi	   14.8
+column	core	read	wire	vperi	column-core-read-wire-vperi	   28.2
+column	core	write	device	vperi	column-core-write-device-vperi	   14.8
+column	core	write	wire	vperi	column-core-write-wire-vperi	   28.2
+control	periphery	activate	device	vperi	control-periphery-activate-device-vperi	    2.5
+control	periphery	activate	wire	vperi	control-periphery-activate-wire-vperi	    6.6
+control	periphery	nop	device	vperi	control-periphery-nop-device-vperi	    4.6
+control	periphery	nop	wire	vperi	control-periphery-nop-wire-vperi	   18.9
+control	periphery	precharge	device	vperi	control-periphery-precharge-device-vperi	    2.5
+control	periphery	precharge	wire	vperi	control-periphery-precharge-wire-vperi	    6.6
+control	periphery	read	device	vperi	control-periphery-read-device-vperi	    3.6
+control	periphery	read	wire	vperi	control-periphery-read-wire-vperi	    8.0
+control	periphery	write	device	vperi	control-periphery-write-device-vperi	    3.6
+control	periphery	write	wire	vperi	control-periphery-write-wire-vperi	    8.0
+data	core	read	device	vperi	data-core-read-device-vperi	    1.7
+data	core	read	wire	varray	data-core-read-wire-varray	    8.2
+data	core	read	wire	vperi	data-core-read-wire-vperi	   13.5
+data	core	write	device	vperi	data-core-write-device-vperi	    0.7
+data	core	write	wire	varray	data-core-write-wire-varray	    9.8
+data	core	write	wire	vperi	data-core-write-wire-vperi	   14.9
+data	periphery	read	device	vperi	data-periphery-read-device-vperi	   13.2
+data	periphery	read	wire	vperi	data-periphery-read-wire-vperi	   37.3
+data	periphery	write	device	vperi	data-periphery-write-device-vperi	   13.9
+data	periphery	write	wire	vperi	data-periphery-write-wire-vperi	   38.5
+row	core	activate	device	vperi	row-core-activate-device-vperi	    2.0
+row	core	activate	device	vpp	row-core-activate-device-vpp	   19.1
+row	core	activate	wire	vperi	row-core-activate-wire-vperi	    5.2
+row	core	activate	wire	vpp	row-core-activate-wire-vpp	    2.5
+row	core	precharge	device	vperi	row-core-precharge-device-vperi	    1.6
+row	core	precharge	device	vpp	row-core-precharge-device-vpp	   19.1
+row	core	precharge	wire	vperi	row-core-precharge-wire-vperi	    0.2
+row	core	precharge	wire	vpp	row-core-precharge-wire-vpp	    2.5
+senseamp	core	activate	device	varray	senseamp-core-activate-device-varray	  153.2
+senseamp	core	activate	device	vperi	senseamp-core-activate-device-vperi	   19.0
+senseamp	core	activate	wire	vperi	senseamp-core-activate-wire-vperi	    0.7
+senseamp	core	precharge	device	vperi	senseamp-core-precharge-device-vperi	    2.5
+senseamp	core	precharge	wire	vperi	senseamp-core-precharge-wire-vperi	    0.7
+senseamp	core	read	device	vperi	senseamp-core-read-device-vperi	    0.1
+senseamp	core	read	wire	vperi	senseamp-core-read-wire-vperi	    5.3
+senseamp	core	write	device	varray	senseamp-core-write-device-varray	    2.5
+senseamp	core	write	wire	vperi	senseamp-core-write-wire-vperi	    5.3
+
+Power by component
+baseload	   45.0
+clock	    3.8
+column	   86.0
+control	   64.8
+data	  151.6
+row	   52.3
+senseamp	  189.2
+
+Power by location
+core	  376.2
+periphery	  216.5
+
+Power by operation
+activate	  216.9
+nop	   47.9
+precharge	   41.8
+read	  139.9
+write	  146.2
+
+Power by type
+device	  340.1
+wire	  252.5
+
+Power by voltage
+varray	  173.6
+vcc	   45.0
+vperi	  330.8
+vpp	   43.3
+
+Power by operation and location
+activate-core	  201.7
+activate-periphery	   15.2
+nop-periphery	   47.9
+precharge-core	   26.6
+precharge-periphery	   15.2
+read-core	   71.7
+read-periphery	   68.2
+write-core	   76.2
+write-periphery	   70.0
+
+Power by operation and type
+activate-device	  201.5
+activate-wire	   15.4
+nop-device	   27.1
+nop-wire	   20.8
+precharge-device	   31.5
+precharge-wire	   10.4
+read-device	   39.0
+read-wire	  100.9
+write-device	   41.1
+write-wire	  105.1
+
+Power by location and voltage
+core-varray	  173.6
+core-vperi	  159.3
+core-vpp	   43.3
+periphery-vcc	   45.0
+periphery-vperi	  171.5
+
+Power by generalized operation, type and location
+row-device-core	  216.6
+row-wire-core	   11.7
+row-device-periphery	   16.3
+row-wire-periphery	   14.1
+column-device-core	   34.5
+column-wire-core	  113.3
+column-device-periphery	   72.6
+column-wire-periphery	  113.4

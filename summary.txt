@@ -1,0 +1,1321 @@
+
+Loop variables:
+specification-pattern-loop: act pre nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop, rd nop nop nop, wrt nop nop nop, rd act pre nop rd act pre nop rd act pre nop rd act pre nop rd nop nop nop rd nop nop nop rd nop nop nop rd nop nop nop, wrt act pre nop rd act pre nop wrt act pre nop rd act pre nop wrt nop nop nop rd nop nop nop wrt nop nop nop rd nop nop nop
+
+Instances of variations to be calculated:
+specification-pattern-loop act pre nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop 
+specification-pattern-loop rd nop nop nop 
+specification-pattern-loop wrt nop nop nop 
+specification-pattern-loop rd act pre nop rd act pre nop rd act pre nop rd act pre nop rd nop nop nop rd nop nop nop rd nop nop nop rd nop nop nop 
+specification-pattern-loop wrt act pre nop rd act pre nop wrt act pre nop rd act pre nop wrt nop nop nop rd nop nop nop wrt nop nop nop rd nop nop nop 
+
+Evaluating specification-pattern-loop = act pre nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop
+
+Physical floorplan:
+die width = 17844um, die height = 15610um
+
+
+Signaling floorplan:
+Signal 'datar' has a total length of 22420um
+Signal 'dataw' has a total length of 22420um
+Signal 'coladd' has a total length of 9167um
+Signal 'rowadd' has a total length of 14496um
+Signal 'bankadd' has a total length of 7056um
+Signal 'control' has a total length of 17844um
+Signal 'clock' has a total length of 17844um
+
+Signal datar:
+  segment 0: wire 512 bits, frequency 200MHz
+  segment 1: wire 512 bits, frequency 200MHz
+  segment 2: wire 512 bits, frequency 200MHz
+  segment 3: wire 512 bits, frequency 200MHz
+  segment 4: wire 256 bits, frequency 400MHz
+  segment 5: wire 256 bits, frequency 400MHz
+  segment 6: wire 64 bits, frequency 1600MHz
+
+Signal dataw:
+  segment 0: wire 64 bits, frequency 1600MHz
+  segment 1: wire 256 bits, frequency 400MHz
+  segment 2: wire 256 bits, frequency 400MHz
+  segment 3: wire 512 bits, frequency 200MHz
+  segment 4: wire 512 bits, frequency 200MHz
+  segment 5: wire 512 bits, frequency 200MHz
+  segment 6: wire 512 bits, frequency 200MHz
+
+Signal bankadd:
+  segment 0: wire 3 bits, frequency 800MHz
+  segment 1: wire 3 bits, frequency 800MHz
+
+Signal rowadd:
+  segment 0: wire 14 bits, frequency 800MHz
+  segment 1: wire 14 bits, frequency 800MHz
+  segment 2: wire 14 bits, frequency 800MHz
+
+Signal coladd:
+  segment 0: wire 10 bits, frequency 800MHz
+  segment 1: wire 10 bits, frequency 800MHz
+  segment 2: wire 10 bits, frequency 800MHz
+
+Signal control:
+  segment 0: wire 6 bits, frequency 800MHz
+  segment 1: wire 6 bits, frequency 800MHz
+  segment 2: wire 6 bits, frequency 800MHz
+
+Signal clock:
+  segment 0: wire 1 bits, frequency 800MHz
+  segment 1: wire 1 bits, frequency 800MHz
+  segment 2: wire 1 bits, frequency 800MHz
+
+Device Architecture Overview:
+Density 8192Mb
+8 Banks, 16384 rows, 1024 columns, 64 IOs
+Prefetch 8 bits
+Granularity 64 Bytes
+Page size 8 kByte
+Subbanks per bank: 1
+Subarrays in array block parallel BL: 4
+Subarrays in array block parallel WL: 16
+Number of SWL driver stripes: 17
+Row activation overhead (>1 for open bitline): 1.250
+Pattern loop period: 45ns
+Row operation period: 45ns
+Operation share: activate 3%
+Operation share: precharge 3%
+Operation share: read 0%
+Operation share: write 0%
+
+Voltages:
+Vcc = 1.80V
+Vperi = 1.50V, generator efficiency = 100%
+Varray = 1.30V, generator efficiency = 100%
+Vpp = 3.00V, generator efficiency = 37%
+
+Periphery circuits:
+Logic: device width 3840um wire length 38005um operation row component control toggle 100%
+Logic: device width 3840um wire length 38005um operation readwrite component control toggle 100%
+Logic: device width 9600um wire length 95037um operation readwrite component column toggle 100%
+Logic: device width 8640um wire length 85485um operation readwrite component data toggle 100%
+Logic: device width 2880um wire length 28496um operation readwrite component control toggle 100%
+Logic: device width 2880um wire length 28496um operation all component control toggle 100%
+Sink: voltage vcc current 30mA
+
+Row current calculation:
+row-core-activate-device-vperi: 0.98mA
+row-core-activate-device-vpp: 2.85mA
+row-core-activate-wire-vperi: 0.23mA
+row-core-activate-wire-vpp: 0.49mA
+row-core-precharge-device-vperi: 0.95mA
+row-core-precharge-device-vpp: 2.85mA
+row-core-precharge-wire-vperi: 0.17mA
+row-core-precharge-wire-vpp: 0.49mA
+row-core-activate-device-vperi: 1.04mA
+row-core-activate-wire-vperi: 1.92mA
+
+Sense-amp current calculation:
+senseamp-core-activate-device-vperi: 14.14mA
+senseamp-core-activate-device-varray: 105.24mA
+senseamp-core-activate-wire-vperi: 0.22mA
+senseamp-core-precharge-device-vperi: 1.72mA
+senseamp-core-precharge-wire-vperi: 0.22mA
+senseamp-core-read-device-vperi: 0.58mA
+senseamp-core-read-wire-vperi: 70.46mA
+senseamp-core-write-device-varray: 15.44mA
+senseamp-core-write-wire-vperi: 70.46mA
+
+Column current calculation:
+column-core-read-device-vperi: 1.39mA
+column-core-read-wire-vperi: 27.50mA
+column-core-write-device-vperi: 1.39mA
+column-core-write-wire-vperi: 27.50mA
+
+Data read current calculation:
+data-core-read-device-vperi: 10.38mA
+data-core-read-wire-vperi: 146.35mA
+data-core-read-wire-varray: 93.95mA
+data-periphery-read-device-vperi: 4.45mA
+data-periphery-read-wire-vperi: 237.78mA
+
+Data write current calculation:
+data-core-write-device-vperi: 4.45mA
+data-core-write-wire-vperi: 187.59mA
+data-core-write-wire-varray: 122.14mA
+data-periphery-write-device-vperi: 8.90mA
+data-periphery-write-wire-vperi: 244.79mA
+
+Control current calculation:
+control-periphery-activate-device-vperi: 0.63mA
+control-periphery-activate-wire-vperi: 38.47mA
+control-periphery-precharge-device-vperi: 0.63mA
+control-periphery-precharge-wire-vperi: 38.47mA
+control-periphery-read-device-vperi: 0.63mA
+control-periphery-read-wire-vperi: 38.47mA
+control-periphery-write-device-vperi: 0.63mA
+control-periphery-write-wire-vperi: 38.47mA
+
+Clock current calculation:
+clock-periphery-activate-device-vperi: 0.07mA
+clock-periphery-activate-wire-vperi: 5.35mA
+clock-periphery-precharge-device-vperi: 0.07mA
+clock-periphery-precharge-wire-vperi: 5.35mA
+clock-periphery-read-device-vperi: 0.07mA
+clock-periphery-read-wire-vperi: 5.35mA
+clock-periphery-write-device-vperi: 0.07mA
+clock-periphery-write-wire-vperi: 5.35mA
+
+Logic block current calculation:
+row-core-activate-device-vperi: 1.04mA
+row-core-activate-device-vpp: 2.85mA
+row-core-precharge-device-vperi: 0.95mA
+row-core-precharge-device-vpp: 2.85mA
+column-core-read-device-vperi: 24.56mA
+column-core-write-device-vperi: 24.56mA
+senseamp-core-activate-device-vperi: 14.14mA
+senseamp-core-activate-device-varray: 105.24mA
+senseamp-core-precharge-device-vperi: 1.72mA
+senseamp-core-read-device-vperi: 0.58mA
+senseamp-core-write-device-varray: 15.44mA
+data-periphery-read-device-vperi: 25.30mA
+data-core-read-device-vperi: 10.38mA
+data-periphery-write-device-vperi: 29.75mA
+data-core-write-device-vperi: 4.45mA
+control-periphery-activate-device-vperi: 16.84mA
+control-periphery-precharge-device-vperi: 16.84mA
+control-periphery-read-device-vperi: 23.79mA
+control-periphery-write-device-vperi: 23.79mA
+clock-periphery-activate-device-vperi: 0.07mA
+clock-periphery-precharge-device-vperi: 0.07mA
+clock-periphery-read-device-vperi: 0.07mA
+clock-periphery-write-device-vperi: 0.07mA
+baseload-periphery-activate-device-vcc: 30.00mA
+baseload-periphery-precharge-device-vcc: 30.00mA
+baseload-periphery-read-device-vcc: 30.00mA
+baseload-periphery-write-device-vcc: 30.00mA
+
+All calculated current components:
+baseload-periphery-activate-device-vcc 30.00mA
+baseload-periphery-nop-device-vcc 30.00mA
+baseload-periphery-precharge-device-vcc 30.00mA
+baseload-periphery-read-device-vcc 30.00mA
+baseload-periphery-write-device-vcc 30.00mA
+clock-periphery-activate-device-vperi 0.07mA
+clock-periphery-activate-wire-vperi 5.35mA
+clock-periphery-nop-device-vperi 0.07mA
+clock-periphery-nop-wire-vperi 5.35mA
+clock-periphery-precharge-device-vperi 0.07mA
+clock-periphery-precharge-wire-vperi 5.35mA
+clock-periphery-read-device-vperi 0.07mA
+clock-periphery-read-wire-vperi 5.35mA
+clock-periphery-write-device-vperi 0.07mA
+clock-periphery-write-wire-vperi 5.35mA
+column-core-read-device-vperi 24.56mA
+column-core-read-wire-vperi 56.01mA
+column-core-write-device-vperi 24.56mA
+column-core-write-wire-vperi 56.01mA
+control-periphery-activate-device-vperi 16.84mA
+control-periphery-activate-wire-vperi 58.42mA
+control-periphery-nop-device-vperi 7.58mA
+control-periphery-nop-wire-vperi 47.02mA
+control-periphery-precharge-device-vperi 16.84mA
+control-periphery-precharge-wire-vperi 58.42mA
+control-periphery-read-device-vperi 23.79mA
+control-periphery-read-wire-vperi 66.97mA
+control-periphery-write-device-vperi 23.79mA
+control-periphery-write-wire-vperi 66.97mA
+data-core-read-device-vperi 10.38mA
+data-core-read-wire-varray 93.95mA
+data-core-read-wire-vperi 146.35mA
+data-core-write-device-vperi 4.45mA
+data-core-write-wire-varray 122.14mA
+data-core-write-wire-vperi 187.59mA
+data-periphery-read-device-vperi 25.30mA
+data-periphery-read-wire-vperi 263.42mA
+data-periphery-write-device-vperi 29.75mA
+data-periphery-write-wire-vperi 270.43mA
+row-core-activate-device-vperi 1.04mA
+row-core-activate-device-vpp 2.85mA
+row-core-activate-wire-vperi 1.92mA
+row-core-activate-wire-vpp 0.49mA
+row-core-precharge-device-vperi 0.95mA
+row-core-precharge-device-vpp 2.85mA
+row-core-precharge-wire-vperi 0.17mA
+row-core-precharge-wire-vpp 0.49mA
+senseamp-core-activate-device-varray 105.24mA
+senseamp-core-activate-device-vperi 14.14mA
+senseamp-core-activate-wire-vperi 0.22mA
+senseamp-core-precharge-device-vperi 1.72mA
+senseamp-core-precharge-wire-vperi 0.22mA
+senseamp-core-read-device-vperi 0.58mA
+senseamp-core-read-wire-vperi 70.46mA
+senseamp-core-write-device-varray 15.44mA
+senseamp-core-write-wire-vperi 70.46mA
+
+Pattern current and power:
+Burst length is 4 clock cycles, used as multiplier for internal share of column and data operation in read and write.
+Activate current:    134.7mA (  3% of  4847.6mA )
+Precharge current:    15.2mA (  3% of   545.8mA )
+Write current:         0.0mA (  0% of     0.0mA )
+Read current:          0.0mA (  0% of     0.0mA )
+NOP current:          85.0mA ( 94% of    90.0mA )
+Total current:       234.8mA
+Power:               422.7mW
+Power:   422.7mW (row period 45.00ns)
+
+Power by location and voltage
+core-varray	  189.4
+core-vperi	   36.7
+core-vpp	   32.5
+periphery-vcc	   54.0
+periphery-vperi	  110.1
+
+Power by location
+core              258.6
+periphery         164.1
+
+Evaluating specification-pattern-loop = rd nop nop nop
+
+Physical floorplan:
+die width = 17844um, die height = 15610um
+
+
+Signaling floorplan:
+Signal 'datar' has a total length of 22420um
+Signal 'dataw' has a total length of 22420um
+Signal 'coladd' has a total length of 9167um
+Signal 'rowadd' has a total length of 14496um
+Signal 'bankadd' has a total length of 7056um
+Signal 'control' has a total length of 17844um
+Signal 'clock' has a total length of 17844um
+
+Signal datar:
+  segment 0: wire 512 bits, frequency 200MHz
+  segment 1: wire 512 bits, frequency 200MHz
+  segment 2: wire 512 bits, frequency 200MHz
+  segment 3: wire 512 bits, frequency 200MHz
+  segment 4: wire 256 bits, frequency 400MHz
+  segment 5: wire 256 bits, frequency 400MHz
+  segment 6: wire 64 bits, frequency 1600MHz
+
+Signal dataw:
+  segment 0: wire 64 bits, frequency 1600MHz
+  segment 1: wire 256 bits, frequency 400MHz
+  segment 2: wire 256 bits, frequency 400MHz
+  segment 3: wire 512 bits, frequency 200MHz
+  segment 4: wire 512 bits, frequency 200MHz
+  segment 5: wire 512 bits, frequency 200MHz
+  segment 6: wire 512 bits, frequency 200MHz
+
+Signal bankadd:
+  segment 0: wire 3 bits, frequency 800MHz
+  segment 1: wire 3 bits, frequency 800MHz
+
+Signal rowadd:
+  segment 0: wire 14 bits, frequency 800MHz
+  segment 1: wire 14 bits, frequency 800MHz
+  segment 2: wire 14 bits, frequency 800MHz
+
+Signal coladd:
+  segment 0: wire 10 bits, frequency 800MHz
+  segment 1: wire 10 bits, frequency 800MHz
+  segment 2: wire 10 bits, frequency 800MHz
+
+Signal control:
+  segment 0: wire 6 bits, frequency 800MHz
+  segment 1: wire 6 bits, frequency 800MHz
+  segment 2: wire 6 bits, frequency 800MHz
+
+Signal clock:
+  segment 0: wire 1 bits, frequency 800MHz
+  segment 1: wire 1 bits, frequency 800MHz
+  segment 2: wire 1 bits, frequency 800MHz
+
+Device Architecture Overview:
+Density 8192Mb
+8 Banks, 16384 rows, 1024 columns, 64 IOs
+Prefetch 8 bits
+Granularity 64 Bytes
+Page size 8 kByte
+Subbanks per bank: 1
+Subarrays in array block parallel BL: 4
+Subarrays in array block parallel WL: 16
+Number of SWL driver stripes: 17
+Row activation overhead (>1 for open bitline): 1.250
+Pattern loop period: 5ns
+Row operation period: 60ns
+Operation share: activate 0%
+Operation share: precharge 0%
+Operation share: read 25%
+Operation share: write 0%
+
+Voltages:
+Vcc = 1.80V
+Vperi = 1.50V, generator efficiency = 100%
+Varray = 1.30V, generator efficiency = 100%
+Vpp = 3.00V, generator efficiency = 37%
+
+Periphery circuits:
+Logic: device width 3840um wire length 38005um operation row component control toggle 100%
+Logic: device width 3840um wire length 38005um operation readwrite component control toggle 100%
+Logic: device width 9600um wire length 95037um operation readwrite component column toggle 100%
+Logic: device width 8640um wire length 85485um operation readwrite component data toggle 100%
+Logic: device width 2880um wire length 28496um operation readwrite component control toggle 100%
+Logic: device width 2880um wire length 28496um operation all component control toggle 100%
+Sink: voltage vcc current 30mA
+
+Row current calculation:
+row-core-activate-device-vperi: 0.74mA
+row-core-activate-device-vpp: 2.14mA
+row-core-activate-wire-vperi: 0.17mA
+row-core-activate-wire-vpp: 0.36mA
+row-core-precharge-device-vperi: 0.71mA
+row-core-precharge-device-vpp: 2.14mA
+row-core-precharge-wire-vperi: 0.13mA
+row-core-precharge-wire-vpp: 0.36mA
+row-core-activate-device-vperi: 0.78mA
+row-core-activate-wire-vperi: 1.44mA
+
+Sense-amp current calculation:
+senseamp-core-activate-device-vperi: 10.61mA
+senseamp-core-activate-device-varray: 78.93mA
+senseamp-core-activate-wire-vperi: 0.16mA
+senseamp-core-precharge-device-vperi: 1.29mA
+senseamp-core-precharge-wire-vperi: 0.16mA
+senseamp-core-read-device-vperi: 0.58mA
+senseamp-core-read-wire-vperi: 70.46mA
+senseamp-core-write-device-varray: 15.44mA
+senseamp-core-write-wire-vperi: 70.46mA
+
+Column current calculation:
+column-core-read-device-vperi: 1.39mA
+column-core-read-wire-vperi: 27.50mA
+column-core-write-device-vperi: 1.39mA
+column-core-write-wire-vperi: 27.50mA
+
+Data read current calculation:
+data-core-read-device-vperi: 10.38mA
+data-core-read-wire-vperi: 146.35mA
+data-core-read-wire-varray: 93.95mA
+data-periphery-read-device-vperi: 4.45mA
+data-periphery-read-wire-vperi: 237.78mA
+
+Data write current calculation:
+data-core-write-device-vperi: 4.45mA
+data-core-write-wire-vperi: 187.59mA
+data-core-write-wire-varray: 122.14mA
+data-periphery-write-device-vperi: 8.90mA
+data-periphery-write-wire-vperi: 244.79mA
+
+Control current calculation:
+control-periphery-activate-device-vperi: 0.63mA
+control-periphery-activate-wire-vperi: 38.47mA
+control-periphery-precharge-device-vperi: 0.63mA
+control-periphery-precharge-wire-vperi: 38.47mA
+control-periphery-read-device-vperi: 0.63mA
+control-periphery-read-wire-vperi: 38.47mA
+control-periphery-write-device-vperi: 0.63mA
+control-periphery-write-wire-vperi: 38.47mA
+
+Clock current calculation:
+clock-periphery-activate-device-vperi: 0.07mA
+clock-periphery-activate-wire-vperi: 5.35mA
+clock-periphery-precharge-device-vperi: 0.07mA
+clock-periphery-precharge-wire-vperi: 5.35mA
+clock-periphery-read-device-vperi: 0.07mA
+clock-periphery-read-wire-vperi: 5.35mA
+clock-periphery-write-device-vperi: 0.07mA
+clock-periphery-write-wire-vperi: 5.35mA
+
+Logic block current calculation:
+row-core-activate-device-vperi: 0.78mA
+row-core-activate-device-vpp: 2.14mA
+row-core-precharge-device-vperi: 0.71mA
+row-core-precharge-device-vpp: 2.14mA
+column-core-read-device-vperi: 24.56mA
+column-core-write-device-vperi: 24.56mA
+senseamp-core-activate-device-vperi: 10.61mA
+senseamp-core-activate-device-varray: 78.93mA
+senseamp-core-precharge-device-vperi: 1.29mA
+senseamp-core-read-device-vperi: 0.58mA
+senseamp-core-write-device-varray: 15.44mA
+data-periphery-read-device-vperi: 25.30mA
+data-core-read-device-vperi: 10.38mA
+data-periphery-write-device-vperi: 29.75mA
+data-core-write-device-vperi: 4.45mA
+control-periphery-activate-device-vperi: 16.84mA
+control-periphery-precharge-device-vperi: 16.84mA
+control-periphery-read-device-vperi: 23.79mA
+control-periphery-write-device-vperi: 23.79mA
+clock-periphery-activate-device-vperi: 0.07mA
+clock-periphery-precharge-device-vperi: 0.07mA
+clock-periphery-read-device-vperi: 0.07mA
+clock-periphery-write-device-vperi: 0.07mA
+baseload-periphery-activate-device-vcc: 30.00mA
+baseload-periphery-precharge-device-vcc: 30.00mA
+baseload-periphery-read-device-vcc: 30.00mA
+baseload-periphery-write-device-vcc: 30.00mA
+
+All calculated current components:
+baseload-periphery-activate-device-vcc 30.00mA
+baseload-periphery-nop-device-vcc 30.00mA
+baseload-periphery-precharge-device-vcc 30.00mA
+baseload-periphery-read-device-vcc 30.00mA
+baseload-periphery-write-device-vcc 30.00mA
+clock-periphery-activate-device-vperi 0.07mA
+clock-periphery-activate-wire-vperi 5.35mA
+clock-periphery-nop-device-vperi 0.07mA
+clock-periphery-nop-wire-vperi 5.35mA
+clock-periphery-precharge-device-vperi 0.07mA
+clock-periphery-precharge-wire-vperi 5.35mA
+clock-periphery-read-device-vperi 0.07mA
+clock-periphery-read-wire-vperi 5.35mA
+clock-periphery-write-device-vperi 0.07mA
+clock-periphery-write-wire-vperi 5.35mA
+column-core-read-device-vperi 24.56mA
+column-core-read-wire-vperi 56.01mA
+column-core-write-device-vperi 24.56mA
+column-core-write-wire-vperi 56.01mA
+control-periphery-activate-device-vperi 16.84mA
+control-periphery-activate-wire-vperi 58.42mA
+control-periphery-nop-device-vperi 7.58mA
+control-periphery-nop-wire-vperi 47.02mA
+control-periphery-precharge-device-vperi 16.84mA
+control-periphery-precharge-wire-vperi 58.42mA
+control-periphery-read-device-vperi 23.79mA
+control-periphery-read-wire-vperi 66.97mA
+control-periphery-write-device-vperi 23.79mA
+control-periphery-write-wire-vperi 66.97mA
+data-core-read-device-vperi 10.38mA
+data-core-read-wire-varray 93.95mA
+data-core-read-wire-vperi 146.35mA
+data-core-write-device-vperi 4.45mA
+data-core-write-wire-varray 122.14mA
+data-core-write-wire-vperi 187.59mA
+data-periphery-read-device-vperi 25.30mA
+data-periphery-read-wire-vperi 263.42mA
+data-periphery-write-device-vperi 29.75mA
+data-periphery-write-wire-vperi 270.43mA
+row-core-activate-device-vperi 0.78mA
+row-core-activate-device-vpp 2.14mA
+row-core-activate-wire-vperi 1.44mA
+row-core-activate-wire-vpp 0.36mA
+row-core-precharge-device-vperi 0.71mA
+row-core-precharge-device-vpp 2.14mA
+row-core-precharge-wire-vperi 0.13mA
+row-core-precharge-wire-vpp 0.36mA
+senseamp-core-activate-device-varray 78.93mA
+senseamp-core-activate-device-vperi 10.61mA
+senseamp-core-activate-wire-vperi 0.16mA
+senseamp-core-precharge-device-vperi 1.29mA
+senseamp-core-precharge-wire-vperi 0.16mA
+senseamp-core-read-device-vperi 0.58mA
+senseamp-core-read-wire-vperi 70.46mA
+senseamp-core-write-device-varray 15.44mA
+senseamp-core-write-wire-vperi 70.46mA
+
+Pattern current and power:
+Burst length is 4 clock cycles, used as multiplier for internal share of column and data operation in read and write.
+Activate current:      0.0mA (  0% of     0.0mA )
+Precharge current:     0.0mA (  0% of     0.0mA )
+Write current:         0.0mA (  0% of     0.0mA )
+Read current:        722.6mA ( 25% of  2890.2mA )
+NOP current:          67.5mA ( 75% of    90.0mA )
+Total current:       790.1mA
+Power:              1422.1mW
+Power:  1422.1mW (row period 60.00ns)
+
+Power by location and voltage
+core-varray	  169.1
+core-vperi	  555.0
+periphery-vcc	   54.0
+periphery-vperi	  644.0
+
+Power by location
+core              724.1
+periphery         698.0
+
+Evaluating specification-pattern-loop = wrt nop nop nop
+
+Physical floorplan:
+die width = 17844um, die height = 15610um
+
+
+Signaling floorplan:
+Signal 'datar' has a total length of 22420um
+Signal 'dataw' has a total length of 22420um
+Signal 'coladd' has a total length of 9167um
+Signal 'rowadd' has a total length of 14496um
+Signal 'bankadd' has a total length of 7056um
+Signal 'control' has a total length of 17844um
+Signal 'clock' has a total length of 17844um
+
+Signal datar:
+  segment 0: wire 512 bits, frequency 200MHz
+  segment 1: wire 512 bits, frequency 200MHz
+  segment 2: wire 512 bits, frequency 200MHz
+  segment 3: wire 512 bits, frequency 200MHz
+  segment 4: wire 256 bits, frequency 400MHz
+  segment 5: wire 256 bits, frequency 400MHz
+  segment 6: wire 64 bits, frequency 1600MHz
+
+Signal dataw:
+  segment 0: wire 64 bits, frequency 1600MHz
+  segment 1: wire 256 bits, frequency 400MHz
+  segment 2: wire 256 bits, frequency 400MHz
+  segment 3: wire 512 bits, frequency 200MHz
+  segment 4: wire 512 bits, frequency 200MHz
+  segment 5: wire 512 bits, frequency 200MHz
+  segment 6: wire 512 bits, frequency 200MHz
+
+Signal bankadd:
+  segment 0: wire 3 bits, frequency 800MHz
+  segment 1: wire 3 bits, frequency 800MHz
+
+Signal rowadd:
+  segment 0: wire 14 bits, frequency 800MHz
+  segment 1: wire 14 bits, frequency 800MHz
+  segment 2: wire 14 bits, frequency 800MHz
+
+Signal coladd:
+  segment 0: wire 10 bits, frequency 800MHz
+  segment 1: wire 10 bits, frequency 800MHz
+  segment 2: wire 10 bits, frequency 800MHz
+
+Signal control:
+  segment 0: wire 6 bits, frequency 800MHz
+  segment 1: wire 6 bits, frequency 800MHz
+  segment 2: wire 6 bits, frequency 800MHz
+
+Signal clock:
+  segment 0: wire 1 bits, frequency 800MHz
+  segment 1: wire 1 bits, frequency 800MHz
+  segment 2: wire 1 bits, frequency 800MHz
+
+Device Architecture Overview:
+Density 8192Mb
+8 Banks, 16384 rows, 1024 columns, 64 IOs
+Prefetch 8 bits
+Granularity 64 Bytes
+Page size 8 kByte
+Subbanks per bank: 1
+Subarrays in array block parallel BL: 4
+Subarrays in array block parallel WL: 16
+Number of SWL driver stripes: 17
+Row activation overhead (>1 for open bitline): 1.250
+Pattern loop period: 5ns
+Row operation period: 60ns
+Operation share: activate 0%
+Operation share: precharge 0%
+Operation share: read 0%
+Operation share: write 25%
+
+Voltages:
+Vcc = 1.80V
+Vperi = 1.50V, generator efficiency = 100%
+Varray = 1.30V, generator efficiency = 100%
+Vpp = 3.00V, generator efficiency = 37%
+
+Periphery circuits:
+Logic: device width 3840um wire length 38005um operation row component control toggle 100%
+Logic: device width 3840um wire length 38005um operation readwrite component control toggle 100%
+Logic: device width 9600um wire length 95037um operation readwrite component column toggle 100%
+Logic: device width 8640um wire length 85485um operation readwrite component data toggle 100%
+Logic: device width 2880um wire length 28496um operation readwrite component control toggle 100%
+Logic: device width 2880um wire length 28496um operation all component control toggle 100%
+Sink: voltage vcc current 30mA
+
+Row current calculation:
+row-core-activate-device-vperi: 0.74mA
+row-core-activate-device-vpp: 2.14mA
+row-core-activate-wire-vperi: 0.17mA
+row-core-activate-wire-vpp: 0.36mA
+row-core-precharge-device-vperi: 0.71mA
+row-core-precharge-device-vpp: 2.14mA
+row-core-precharge-wire-vperi: 0.13mA
+row-core-precharge-wire-vpp: 0.36mA
+row-core-activate-device-vperi: 0.78mA
+row-core-activate-wire-vperi: 1.44mA
+
+Sense-amp current calculation:
+senseamp-core-activate-device-vperi: 10.61mA
+senseamp-core-activate-device-varray: 78.93mA
+senseamp-core-activate-wire-vperi: 0.16mA
+senseamp-core-precharge-device-vperi: 1.29mA
+senseamp-core-precharge-wire-vperi: 0.16mA
+senseamp-core-read-device-vperi: 0.58mA
+senseamp-core-read-wire-vperi: 70.46mA
+senseamp-core-write-device-varray: 15.44mA
+senseamp-core-write-wire-vperi: 70.46mA
+
+Column current calculation:
+column-core-read-device-vperi: 1.39mA
+column-core-read-wire-vperi: 27.50mA
+column-core-write-device-vperi: 1.39mA
+column-core-write-wire-vperi: 27.50mA
+
+Data read current calculation:
+data-core-read-device-vperi: 10.38mA
+data-core-read-wire-vperi: 146.35mA
+data-core-read-wire-varray: 93.95mA
+data-periphery-read-device-vperi: 4.45mA
+data-periphery-read-wire-vperi: 237.78mA
+
+Data write current calculation:
+data-core-write-device-vperi: 4.45mA
+data-core-write-wire-vperi: 187.59mA
+data-core-write-wire-varray: 122.14mA
+data-periphery-write-device-vperi: 8.90mA
+data-periphery-write-wire-vperi: 244.79mA
+
+Control current calculation:
+control-periphery-activate-device-vperi: 0.63mA
+control-periphery-activate-wire-vperi: 38.47mA
+control-periphery-precharge-device-vperi: 0.63mA
+control-periphery-precharge-wire-vperi: 38.47mA
+control-periphery-read-device-vperi: 0.63mA
+control-periphery-read-wire-vperi: 38.47mA
+control-periphery-write-device-vperi: 0.63mA
+control-periphery-write-wire-vperi: 38.47mA
+
+Clock current calculation:
+clock-periphery-activate-device-vperi: 0.07mA
+clock-periphery-activate-wire-vperi: 5.35mA
+clock-periphery-precharge-device-vperi: 0.07mA
+clock-periphery-precharge-wire-vperi: 5.35mA
+clock-periphery-read-device-vperi: 0.07mA
+clock-periphery-read-wire-vperi: 5.35mA
+clock-periphery-write-device-vperi: 0.07mA
+clock-periphery-write-wire-vperi: 5.35mA
+
+Logic block current calculation:
+row-core-activate-device-vperi: 0.78mA
+row-core-activate-device-vpp: 2.14mA
+row-core-precharge-device-vperi: 0.71mA
+row-core-precharge-device-vpp: 2.14mA
+column-core-read-device-vperi: 24.56mA
+column-core-write-device-vperi: 24.56mA
+senseamp-core-activate-device-vperi: 10.61mA
+senseamp-core-activate-device-varray: 78.93mA
+senseamp-core-precharge-device-vperi: 1.29mA
+senseamp-core-read-device-vperi: 0.58mA
+senseamp-core-write-device-varray: 15.44mA
+data-periphery-read-device-vperi: 25.30mA
+data-core-read-device-vperi: 10.38mA
+data-periphery-write-device-vperi: 29.75mA
+data-core-write-device-vperi: 4.45mA
+control-periphery-activate-device-vperi: 16.84mA
+control-periphery-precharge-device-vperi: 16.84mA
+control-periphery-read-device-vperi: 23.79mA
+control-periphery-write-device-vperi: 23.79mA
+clock-periphery-activate-device-vperi: 0.07mA
+clock-periphery-precharge-device-vperi: 0.07mA
+clock-periphery-read-device-vperi: 0.07mA
+clock-periphery-write-device-vperi: 0.07mA
+baseload-periphery-activate-device-vcc: 30.00mA
+baseload-periphery-precharge-device-vcc: 30.00mA
+baseload-periphery-read-device-vcc: 30.00mA
+baseload-periphery-write-device-vcc: 30.00mA
+
+All calculated current components:
+baseload-periphery-activate-device-vcc 30.00mA
+baseload-periphery-nop-device-vcc 30.00mA
+baseload-periphery-precharge-device-vcc 30.00mA
+baseload-periphery-read-device-vcc 30.00mA
+baseload-periphery-write-device-vcc 30.00mA
+clock-periphery-activate-device-vperi 0.07mA
+clock-periphery-activate-wire-vperi 5.35mA
+clock-periphery-nop-device-vperi 0.07mA
+clock-periphery-nop-wire-vperi 5.35mA
+clock-periphery-precharge-device-vperi 0.07mA
+clock-periphery-precharge-wire-vperi 5.35mA
+clock-periphery-read-device-vperi 0.07mA
+clock-periphery-read-wire-vperi 5.35mA
+clock-periphery-write-device-vperi 0.07mA
+clock-periphery-write-wire-vperi 5.35mA
+column-core-read-device-vperi 24.56mA
+column-core-read-wire-vperi 56.01mA
+column-core-write-device-vperi 24.56mA
+column-core-write-wire-vperi 56.01mA
+control-periphery-activate-device-vperi 16.84mA
+control-periphery-activate-wire-vperi 58.42mA
+control-periphery-nop-device-vperi 7.58mA
+control-periphery-nop-wire-vperi 47.02mA
+control-periphery-precharge-device-vperi 16.84mA
+control-periphery-precharge-wire-vperi 58.42mA
+control-periphery-read-device-vperi 23.79mA
+control-periphery-read-wire-vperi 66.97mA
+control-periphery-write-device-vperi 23.79mA
+control-periphery-write-wire-vperi 66.97mA
+data-core-read-device-vperi 10.38mA
+data-core-read-wire-varray 93.95mA
+data-core-read-wire-vperi 146.35mA
+data-core-write-device-vperi 4.45mA
+data-core-write-wire-varray 122.14mA
+data-core-write-wire-vperi 187.59mA
+data-periphery-read-device-vperi 25.30mA
+data-periphery-read-wire-vperi 263.42mA
+data-periphery-write-device-vperi 29.75mA
+data-periphery-write-wire-vperi 270.43mA
+row-core-activate-device-vperi 0.78mA
+row-core-activate-device-vpp 2.14mA
+row-core-activate-wire-vperi 1.44mA
+row-core-activate-wire-vpp 0.36mA
+row-core-precharge-device-vperi 0.71mA
+row-core-precharge-device-vpp 2.14mA
+row-core-precharge-wire-vperi 0.13mA
+row-core-precharge-wire-vpp 0.36mA
+senseamp-core-activate-device-varray 78.93mA
+senseamp-core-activate-device-vperi 10.61mA
+senseamp-core-activate-wire-vperi 0.16mA
+senseamp-core-precharge-device-vperi 1.29mA
+senseamp-core-precharge-wire-vperi 0.16mA
+senseamp-core-read-device-vperi 0.58mA
+senseamp-core-read-wire-vperi 70.46mA
+senseamp-core-write-device-varray 15.44mA
+senseamp-core-write-wire-vperi 70.46mA
+
+Pattern current and power:
+Burst length is 4 clock cycles, used as multiplier for internal share of column and data operation in read and write.
+Activate current:      0.0mA (  0% of     0.0mA )
+Precharge current:     0.0mA (  0% of     0.0mA )
+Write current:       812.4mA ( 25% of  3249.5mA )
+Read current:          0.0mA (  0% of     0.0mA )
+NOP current:          67.5mA ( 75% of    90.0mA )
+Total current:       879.9mA
+Power:              1583.8mW
+Power:  1583.8mW (row period 60.00ns)
+
+Power by location and voltage
+core-varray	  247.6
+core-vperi	  617.5
+periphery-vcc	   54.0
+periphery-vperi	  664.6
+
+Power by location
+core              865.2
+periphery         718.6
+
+Evaluating specification-pattern-loop = rd act pre nop rd act pre nop rd act pre nop rd act pre nop rd nop nop nop rd nop nop nop rd nop nop nop rd nop nop nop
+
+Physical floorplan:
+die width = 17844um, die height = 15610um
+
+
+Signaling floorplan:
+Signal 'datar' has a total length of 22420um
+Signal 'dataw' has a total length of 22420um
+Signal 'coladd' has a total length of 9167um
+Signal 'rowadd' has a total length of 14496um
+Signal 'bankadd' has a total length of 7056um
+Signal 'control' has a total length of 17844um
+Signal 'clock' has a total length of 17844um
+
+Signal datar:
+  segment 0: wire 512 bits, frequency 200MHz
+  segment 1: wire 512 bits, frequency 200MHz
+  segment 2: wire 512 bits, frequency 200MHz
+  segment 3: wire 512 bits, frequency 200MHz
+  segment 4: wire 256 bits, frequency 400MHz
+  segment 5: wire 256 bits, frequency 400MHz
+  segment 6: wire 64 bits, frequency 1600MHz
+
+Signal dataw:
+  segment 0: wire 64 bits, frequency 1600MHz
+  segment 1: wire 256 bits, frequency 400MHz
+  segment 2: wire 256 bits, frequency 400MHz
+  segment 3: wire 512 bits, frequency 200MHz
+  segment 4: wire 512 bits, frequency 200MHz
+  segment 5: wire 512 bits, frequency 200MHz
+  segment 6: wire 512 bits, frequency 200MHz
+
+Signal bankadd:
+  segment 0: wire 3 bits, frequency 800MHz
+  segment 1: wire 3 bits, frequency 800MHz
+
+Signal rowadd:
+  segment 0: wire 14 bits, frequency 800MHz
+  segment 1: wire 14 bits, frequency 800MHz
+  segment 2: wire 14 bits, frequency 800MHz
+
+Signal coladd:
+  segment 0: wire 10 bits, frequency 800MHz
+  segment 1: wire 10 bits, frequency 800MHz
+  segment 2: wire 10 bits, frequency 800MHz
+
+Signal control:
+  segment 0: wire 6 bits, frequency 800MHz
+  segment 1: wire 6 bits, frequency 800MHz
+  segment 2: wire 6 bits, frequency 800MHz
+
+Signal clock:
+  segment 0: wire 1 bits, frequency 800MHz
+  segment 1: wire 1 bits, frequency 800MHz
+  segment 2: wire 1 bits, frequency 800MHz
+
+Device Architecture Overview:
+Density 8192Mb
+8 Banks, 16384 rows, 1024 columns, 64 IOs
+Prefetch 8 bits
+Granularity 64 Bytes
+Page size 8 kByte
+Subbanks per bank: 1
+Subarrays in array block parallel BL: 4
+Subarrays in array block parallel WL: 16
+Number of SWL driver stripes: 17
+Row activation overhead (>1 for open bitline): 1.250
+Pattern loop period: 40ns
+Row operation period: 10ns
+Operation share: activate 12%
+Operation share: precharge 12%
+Operation share: read 25%
+Operation share: write 0%
+
+Voltages:
+Vcc = 1.80V
+Vperi = 1.50V, generator efficiency = 100%
+Varray = 1.30V, generator efficiency = 100%
+Vpp = 3.00V, generator efficiency = 37%
+
+Periphery circuits:
+Logic: device width 3840um wire length 38005um operation row component control toggle 100%
+Logic: device width 3840um wire length 38005um operation readwrite component control toggle 100%
+Logic: device width 9600um wire length 95037um operation readwrite component column toggle 100%
+Logic: device width 8640um wire length 85485um operation readwrite component data toggle 100%
+Logic: device width 2880um wire length 28496um operation readwrite component control toggle 100%
+Logic: device width 2880um wire length 28496um operation all component control toggle 100%
+Sink: voltage vcc current 30mA
+
+Row current calculation:
+row-core-activate-device-vperi: 4.42mA
+row-core-activate-device-vpp: 12.84mA
+row-core-activate-wire-vperi: 1.03mA
+row-core-activate-wire-vpp: 2.19mA
+row-core-precharge-device-vperi: 4.28mA
+row-core-precharge-device-vpp: 12.84mA
+row-core-precharge-wire-vperi: 0.78mA
+row-core-precharge-wire-vpp: 2.19mA
+row-core-activate-device-vperi: 4.66mA
+row-core-activate-wire-vperi: 8.64mA
+
+Sense-amp current calculation:
+senseamp-core-activate-device-vperi: 63.64mA
+senseamp-core-activate-device-varray: 473.57mA
+senseamp-core-activate-wire-vperi: 0.98mA
+senseamp-core-precharge-device-vperi: 7.73mA
+senseamp-core-precharge-wire-vperi: 0.98mA
+senseamp-core-read-device-vperi: 0.58mA
+senseamp-core-read-wire-vperi: 70.46mA
+senseamp-core-write-device-varray: 15.44mA
+senseamp-core-write-wire-vperi: 70.46mA
+
+Column current calculation:
+column-core-read-device-vperi: 1.39mA
+column-core-read-wire-vperi: 27.50mA
+column-core-write-device-vperi: 1.39mA
+column-core-write-wire-vperi: 27.50mA
+
+Data read current calculation:
+data-core-read-device-vperi: 10.38mA
+data-core-read-wire-vperi: 146.35mA
+data-core-read-wire-varray: 93.95mA
+data-periphery-read-device-vperi: 4.45mA
+data-periphery-read-wire-vperi: 237.78mA
+
+Data write current calculation:
+data-core-write-device-vperi: 4.45mA
+data-core-write-wire-vperi: 187.59mA
+data-core-write-wire-varray: 122.14mA
+data-periphery-write-device-vperi: 8.90mA
+data-periphery-write-wire-vperi: 244.79mA
+
+Control current calculation:
+control-periphery-activate-device-vperi: 0.63mA
+control-periphery-activate-wire-vperi: 38.47mA
+control-periphery-precharge-device-vperi: 0.63mA
+control-periphery-precharge-wire-vperi: 38.47mA
+control-periphery-read-device-vperi: 0.63mA
+control-periphery-read-wire-vperi: 38.47mA
+control-periphery-write-device-vperi: 0.63mA
+control-periphery-write-wire-vperi: 38.47mA
+
+Clock current calculation:
+clock-periphery-activate-device-vperi: 0.07mA
+clock-periphery-activate-wire-vperi: 5.35mA
+clock-periphery-precharge-device-vperi: 0.07mA
+clock-periphery-precharge-wire-vperi: 5.35mA
+clock-periphery-read-device-vperi: 0.07mA
+clock-periphery-read-wire-vperi: 5.35mA
+clock-periphery-write-device-vperi: 0.07mA
+clock-periphery-write-wire-vperi: 5.35mA
+
+Logic block current calculation:
+row-core-activate-device-vperi: 4.66mA
+row-core-activate-device-vpp: 12.84mA
+row-core-precharge-device-vperi: 4.28mA
+row-core-precharge-device-vpp: 12.84mA
+column-core-read-device-vperi: 24.56mA
+column-core-write-device-vperi: 24.56mA
+senseamp-core-activate-device-vperi: 63.64mA
+senseamp-core-activate-device-varray: 473.57mA
+senseamp-core-precharge-device-vperi: 7.73mA
+senseamp-core-read-device-vperi: 0.58mA
+senseamp-core-write-device-varray: 15.44mA
+data-periphery-read-device-vperi: 25.30mA
+data-core-read-device-vperi: 10.38mA
+data-periphery-write-device-vperi: 29.75mA
+data-core-write-device-vperi: 4.45mA
+control-periphery-activate-device-vperi: 16.84mA
+control-periphery-precharge-device-vperi: 16.84mA
+control-periphery-read-device-vperi: 23.79mA
+control-periphery-write-device-vperi: 23.79mA
+clock-periphery-activate-device-vperi: 0.07mA
+clock-periphery-precharge-device-vperi: 0.07mA
+clock-periphery-read-device-vperi: 0.07mA
+clock-periphery-write-device-vperi: 0.07mA
+baseload-periphery-activate-device-vcc: 30.00mA
+baseload-periphery-precharge-device-vcc: 30.00mA
+baseload-periphery-read-device-vcc: 30.00mA
+baseload-periphery-write-device-vcc: 30.00mA
+
+All calculated current components:
+baseload-periphery-activate-device-vcc 30.00mA
+baseload-periphery-nop-device-vcc 30.00mA
+baseload-periphery-precharge-device-vcc 30.00mA
+baseload-periphery-read-device-vcc 30.00mA
+baseload-periphery-write-device-vcc 30.00mA
+clock-periphery-activate-device-vperi 0.07mA
+clock-periphery-activate-wire-vperi 5.35mA
+clock-periphery-nop-device-vperi 0.07mA
+clock-periphery-nop-wire-vperi 5.35mA
+clock-periphery-precharge-device-vperi 0.07mA
+clock-periphery-precharge-wire-vperi 5.35mA
+clock-periphery-read-device-vperi 0.07mA
+clock-periphery-read-wire-vperi 5.35mA
+clock-periphery-write-device-vperi 0.07mA
+clock-periphery-write-wire-vperi 5.35mA
+column-core-read-device-vperi 24.56mA
+column-core-read-wire-vperi 56.01mA
+column-core-write-device-vperi 24.56mA
+column-core-write-wire-vperi 56.01mA
+control-periphery-activate-device-vperi 16.84mA
+control-periphery-activate-wire-vperi 58.42mA
+control-periphery-nop-device-vperi 7.58mA
+control-periphery-nop-wire-vperi 47.02mA
+control-periphery-precharge-device-vperi 16.84mA
+control-periphery-precharge-wire-vperi 58.42mA
+control-periphery-read-device-vperi 23.79mA
+control-periphery-read-wire-vperi 66.97mA
+control-periphery-write-device-vperi 23.79mA
+control-periphery-write-wire-vperi 66.97mA
+data-core-read-device-vperi 10.38mA
+data-core-read-wire-varray 93.95mA
+data-core-read-wire-vperi 146.35mA
+data-core-write-device-vperi 4.45mA
+data-core-write-wire-varray 122.14mA
+data-core-write-wire-vperi 187.59mA
+data-periphery-read-device-vperi 25.30mA
+data-periphery-read-wire-vperi 263.42mA
+data-periphery-write-device-vperi 29.75mA
+data-periphery-write-wire-vperi 270.43mA
+row-core-activate-device-vperi 4.66mA
+row-core-activate-device-vpp 12.84mA
+row-core-activate-wire-vperi 8.64mA
+row-core-activate-wire-vpp 2.19mA
+row-core-precharge-device-vperi 4.28mA
+row-core-precharge-device-vpp 12.84mA
+row-core-precharge-wire-vperi 0.78mA
+row-core-precharge-wire-vpp 2.19mA
+senseamp-core-activate-device-varray 473.57mA
+senseamp-core-activate-device-vperi 63.64mA
+senseamp-core-activate-wire-vperi 0.98mA
+senseamp-core-precharge-device-vperi 7.73mA
+senseamp-core-precharge-wire-vperi 0.98mA
+senseamp-core-read-device-vperi 0.58mA
+senseamp-core-read-wire-vperi 70.46mA
+senseamp-core-write-device-varray 15.44mA
+senseamp-core-write-wire-vperi 70.46mA
+
+Pattern current and power:
+Burst length is 4 clock cycles, used as multiplier for internal share of column and data operation in read and write.
+Activate current:    606.0mA ( 12% of  4847.6mA )
+Precharge current:    68.2mA ( 12% of   545.8mA )
+Write current:         0.0mA (  0% of     0.0mA )
+Read current:        722.6mA ( 25% of  2890.2mA )
+NOP current:          45.0mA ( 50% of    90.0mA )
+Total current:      1441.7mA
+Power:              2595.1mW
+Power:  2595.1mW (row period 10.00ns)
+
+Power by location and voltage
+core-varray	 1021.5
+core-vperi	  720.1
+core-vpp	  146.2
+periphery-vcc	   54.0
+periphery-vperi	  653.3
+
+Power by location
+core             1887.8
+periphery         707.3
+
+Evaluating specification-pattern-loop = wrt act pre nop rd act pre nop wrt act pre nop rd act pre nop wrt nop nop nop rd nop nop nop wrt nop nop nop rd nop nop nop
+
+Physical floorplan:
+die width = 17844um, die height = 15610um
+
+
+Signaling floorplan:
+Signal 'datar' has a total length of 22420um
+Signal 'dataw' has a total length of 22420um
+Signal 'coladd' has a total length of 9167um
+Signal 'rowadd' has a total length of 14496um
+Signal 'bankadd' has a total length of 7056um
+Signal 'control' has a total length of 17844um
+Signal 'clock' has a total length of 17844um
+
+Signal datar:
+  segment 0: wire 512 bits, frequency 200MHz
+  segment 1: wire 512 bits, frequency 200MHz
+  segment 2: wire 512 bits, frequency 200MHz
+  segment 3: wire 512 bits, frequency 200MHz
+  segment 4: wire 256 bits, frequency 400MHz
+  segment 5: wire 256 bits, frequency 400MHz
+  segment 6: wire 64 bits, frequency 1600MHz
+
+Signal dataw:
+  segment 0: wire 64 bits, frequency 1600MHz
+  segment 1: wire 256 bits, frequency 400MHz
+  segment 2: wire 256 bits, frequency 400MHz
+  segment 3: wire 512 bits, frequency 200MHz
+  segment 4: wire 512 bits, frequency 200MHz
+  segment 5: wire 512 bits, frequency 200MHz
+  segment 6: wire 512 bits, frequency 200MHz
+
+Signal bankadd:
+  segment 0: wire 3 bits, frequency 800MHz
+  segment 1: wire 3 bits, frequency 800MHz
+
+Signal rowadd:
+  segment 0: wire 14 bits, frequency 800MHz
+  segment 1: wire 14 bits, frequency 800MHz
+  segment 2: wire 14 bits, frequency 800MHz
+
+Signal coladd:
+  segment 0: wire 10 bits, frequency 800MHz
+  segment 1: wire 10 bits, frequency 800MHz
+  segment 2: wire 10 bits, frequency 800MHz
+
+Signal control:
+  segment 0: wire 6 bits, frequency 800MHz
+  segment 1: wire 6 bits, frequency 800MHz
+  segment 2: wire 6 bits, frequency 800MHz
+
+Signal clock:
+  segment 0: wire 1 bits, frequency 800MHz
+  segment 1: wire 1 bits, frequency 800MHz
+  segment 2: wire 1 bits, frequency 800MHz
+
+Device Architecture Overview:
+Density 8192Mb
+8 Banks, 16384 rows, 1024 columns, 64 IOs
+Prefetch 8 bits
+Granularity 64 Bytes
+Page size 8 kByte
+Subbanks per bank: 1
+Subarrays in array block parallel BL: 4
+Subarrays in array block parallel WL: 16
+Number of SWL driver stripes: 17
+Row activation overhead (>1 for open bitline): 1.250
+Pattern loop period: 40ns
+Row operation period: 10ns
+Operation share: activate 12%
+Operation share: precharge 12%
+Operation share: read 12%
+Operation share: write 12%
+
+Voltages:
+Vcc = 1.80V
+Vperi = 1.50V, generator efficiency = 100%
+Varray = 1.30V, generator efficiency = 100%
+Vpp = 3.00V, generator efficiency = 37%
+
+Periphery circuits:
+Logic: device width 3840um wire length 38005um operation row component control toggle 100%
+Logic: device width 3840um wire length 38005um operation readwrite component control toggle 100%
+Logic: device width 9600um wire length 95037um operation readwrite component column toggle 100%
+Logic: device width 8640um wire length 85485um operation readwrite component data toggle 100%
+Logic: device width 2880um wire length 28496um operation readwrite component control toggle 100%
+Logic: device width 2880um wire length 28496um operation all component control toggle 100%
+Sink: voltage vcc current 30mA
+
+Row current calculation:
+row-core-activate-device-vperi: 4.42mA
+row-core-activate-device-vpp: 12.84mA
+row-core-activate-wire-vperi: 1.03mA
+row-core-activate-wire-vpp: 2.19mA
+row-core-precharge-device-vperi: 4.28mA
+row-core-precharge-device-vpp: 12.84mA
+row-core-precharge-wire-vperi: 0.78mA
+row-core-precharge-wire-vpp: 2.19mA
+row-core-activate-device-vperi: 4.66mA
+row-core-activate-wire-vperi: 8.64mA
+
+Sense-amp current calculation:
+senseamp-core-activate-device-vperi: 63.64mA
+senseamp-core-activate-device-varray: 473.57mA
+senseamp-core-activate-wire-vperi: 0.98mA
+senseamp-core-precharge-device-vperi: 7.73mA
+senseamp-core-precharge-wire-vperi: 0.98mA
+senseamp-core-read-device-vperi: 0.58mA
+senseamp-core-read-wire-vperi: 70.46mA
+senseamp-core-write-device-varray: 15.44mA
+senseamp-core-write-wire-vperi: 70.46mA
+
+Column current calculation:
+column-core-read-device-vperi: 1.39mA
+column-core-read-wire-vperi: 27.50mA
+column-core-write-device-vperi: 1.39mA
+column-core-write-wire-vperi: 27.50mA
+
+Data read current calculation:
+data-core-read-device-vperi: 10.38mA
+data-core-read-wire-vperi: 146.35mA
+data-core-read-wire-varray: 93.95mA
+data-periphery-read-device-vperi: 4.45mA
+data-periphery-read-wire-vperi: 237.78mA
+
+Data write current calculation:
+data-core-write-device-vperi: 4.45mA
+data-core-write-wire-vperi: 187.59mA
+data-core-write-wire-varray: 122.14mA
+data-periphery-write-device-vperi: 8.90mA
+data-periphery-write-wire-vperi: 244.79mA
+
+Control current calculation:
+control-periphery-activate-device-vperi: 0.63mA
+control-periphery-activate-wire-vperi: 38.47mA
+control-periphery-precharge-device-vperi: 0.63mA
+control-periphery-precharge-wire-vperi: 38.47mA
+control-periphery-read-device-vperi: 0.63mA
+control-periphery-read-wire-vperi: 38.47mA
+control-periphery-write-device-vperi: 0.63mA
+control-periphery-write-wire-vperi: 38.47mA
+
+Clock current calculation:
+clock-periphery-activate-device-vperi: 0.07mA
+clock-periphery-activate-wire-vperi: 5.35mA
+clock-periphery-precharge-device-vperi: 0.07mA
+clock-periphery-precharge-wire-vperi: 5.35mA
+clock-periphery-read-device-vperi: 0.07mA
+clock-periphery-read-wire-vperi: 5.35mA
+clock-periphery-write-device-vperi: 0.07mA
+clock-periphery-write-wire-vperi: 5.35mA
+
+Logic block current calculation:
+row-core-activate-device-vperi: 4.66mA
+row-core-activate-device-vpp: 12.84mA
+row-core-precharge-device-vperi: 4.28mA
+row-core-precharge-device-vpp: 12.84mA
+column-core-read-device-vperi: 24.56mA
+column-core-write-device-vperi: 24.56mA
+senseamp-core-activate-device-vperi: 63.64mA
+senseamp-core-activate-device-varray: 473.57mA
+senseamp-core-precharge-device-vperi: 7.73mA
+senseamp-core-read-device-vperi: 0.58mA
+senseamp-core-write-device-varray: 15.44mA
+data-periphery-read-device-vperi: 25.30mA
+data-core-read-device-vperi: 10.38mA
+data-periphery-write-device-vperi: 29.75mA
+data-core-write-device-vperi: 4.45mA
+control-periphery-activate-device-vperi: 16.84mA
+control-periphery-precharge-device-vperi: 16.84mA
+control-periphery-read-device-vperi: 23.79mA
+control-periphery-write-device-vperi: 23.79mA
+clock-periphery-activate-device-vperi: 0.07mA
+clock-periphery-precharge-device-vperi: 0.07mA
+clock-periphery-read-device-vperi: 0.07mA
+clock-periphery-write-device-vperi: 0.07mA
+baseload-periphery-activate-device-vcc: 30.00mA
+baseload-periphery-precharge-device-vcc: 30.00mA
+baseload-periphery-read-device-vcc: 30.00mA
+baseload-periphery-write-device-vcc: 30.00mA
+
+All calculated current components:
+baseload-periphery-activate-device-vcc 30.00mA
+baseload-periphery-nop-device-vcc 30.00mA
+baseload-periphery-precharge-device-vcc 30.00mA
+baseload-periphery-read-device-vcc 30.00mA
+baseload-periphery-write-device-vcc 30.00mA
+clock-periphery-activate-device-vperi 0.07mA
+clock-periphery-activate-wire-vperi 5.35mA
+clock-periphery-nop-device-vperi 0.07mA
+clock-periphery-nop-wire-vperi 5.35mA
+clock-periphery-precharge-device-vperi 0.07mA
+clock-periphery-precharge-wire-vperi 5.35mA
+clock-periphery-read-device-vperi 0.07mA
+clock-periphery-read-wire-vperi 5.35mA
+clock-periphery-write-device-vperi 0.07mA
+clock-periphery-write-wire-vperi 5.35mA
+column-core-read-device-vperi 24.56mA
+column-core-read-wire-vperi 56.01mA
+column-core-write-device-vperi 24.56mA
+column-core-write-wire-vperi 56.01mA
+control-periphery-activate-device-vperi 16.84mA
+control-periphery-activate-wire-vperi 58.42mA
+control-periphery-nop-device-vperi 7.58mA
+control-periphery-nop-wire-vperi 47.02mA
+control-periphery-precharge-device-vperi 16.84mA
+control-periphery-precharge-wire-vperi 58.42mA
+control-periphery-read-device-vperi 23.79mA
+control-periphery-read-wire-vperi 66.97mA
+control-periphery-write-device-vperi 23.79mA
+control-periphery-write-wire-vperi 66.97mA
+data-core-read-device-vperi 10.38mA
+data-core-read-wire-varray 93.95mA
+data-core-read-wire-vperi 146.35mA
+data-core-write-device-vperi 4.45mA
+data-core-write-wire-varray 122.14mA
+data-core-write-wire-vperi 187.59mA
+data-periphery-read-device-vperi 25.30mA
+data-periphery-read-wire-vperi 263.42mA
+data-periphery-write-device-vperi 29.75mA
+data-periphery-write-wire-vperi 270.43mA
+row-core-activate-device-vperi 4.66mA
+row-core-activate-device-vpp 12.84mA
+row-core-activate-wire-vperi 8.64mA
+row-core-activate-wire-vpp 2.19mA
+row-core-precharge-device-vperi 4.28mA
+row-core-precharge-device-vpp 12.84mA
+row-core-precharge-wire-vperi 0.78mA
+row-core-precharge-wire-vpp 2.19mA
+senseamp-core-activate-device-varray 473.57mA
+senseamp-core-activate-device-vperi 63.64mA
+senseamp-core-activate-wire-vperi 0.98mA
+senseamp-core-precharge-device-vperi 7.73mA
+senseamp-core-precharge-wire-vperi 0.98mA
+senseamp-core-read-device-vperi 0.58mA
+senseamp-core-read-wire-vperi 70.46mA
+senseamp-core-write-device-varray 15.44mA
+senseamp-core-write-wire-vperi 70.46mA
+
+Pattern current and power:
+Burst length is 4 clock cycles, used as multiplier for internal share of column and data operation in read and write.
+Activate current:    606.0mA ( 12% of  4847.6mA )
+Precharge current:    68.2mA ( 12% of   545.8mA )
+Write current:       406.2mA ( 12% of  3249.5mA )
+Read current:        361.3mA ( 12% of  2890.2mA )
+NOP current:          45.0mA ( 50% of    90.0mA )
+Total current:      1486.7mA
+Power:              2676.0mW
+Power:  2676.0mW (row period 10.00ns)
+
+Power by location and voltage
+core-varray	 1060.8
+core-vperi	  751.3
+core-vpp	  146.2
+periphery-vcc	   54.0
+periphery-vperi	  663.6
+
+Power by location
+core             1958.4
+periphery         717.6
+
+Successful run of 'dram_model.pl'.
+

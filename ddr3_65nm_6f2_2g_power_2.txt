@@ -1,0 +1,73 @@
+Loop instance: specification-pattern-loop = wrt nop nop nop
+Pattern: wrt nop nop nop
+
+
+Detailed power analysis
+component	location	operation	type	voltage	key	power
+baseload	periphery	nop	device	vcc	baseload-periphery-nop-device-vcc	   40.5
+baseload	periphery	write	device	vcc	baseload-periphery-write-device-vcc	   13.5
+clock	periphery	nop	device	vperi	clock-periphery-nop-device-vperi	    0.1
+clock	periphery	nop	wire	vperi	clock-periphery-nop-wire-vperi	    7.2
+clock	periphery	write	device	vperi	clock-periphery-write-device-vperi	    0.0
+clock	periphery	write	wire	vperi	clock-periphery-write-wire-vperi	    2.4
+column	core	write	device	vperi	column-core-write-device-vperi	   44.2
+column	core	write	wire	vperi	column-core-write-wire-vperi	  100.8
+control	periphery	nop	device	vperi	control-periphery-nop-device-vperi	   10.2
+control	periphery	nop	wire	vperi	control-periphery-nop-wire-vperi	   63.5
+control	periphery	write	device	vperi	control-periphery-write-device-vperi	   10.7
+control	periphery	write	wire	vperi	control-periphery-write-wire-vperi	   30.1
+data	core	write	device	vperi	data-core-write-device-vperi	    8.0
+data	core	write	wire	varray	data-core-write-wire-varray	  219.8
+data	core	write	wire	vperi	data-core-write-wire-vperi	  337.7
+data	periphery	write	device	vperi	data-periphery-write-device-vperi	   53.5
+data	periphery	write	wire	vperi	data-periphery-write-wire-vperi	  486.8
+senseamp	core	write	device	varray	senseamp-core-write-device-varray	   27.8
+senseamp	core	write	wire	vperi	senseamp-core-write-wire-vperi	  126.8
+
+Power by component
+baseload	   54.0
+clock	    9.8
+column	  145.0
+control	  114.5
+data	 1105.8
+senseamp	  154.6
+
+Power by location
+core	  865.2
+periphery	  718.6
+
+Power by operation
+nop	  121.5
+write	 1462.3
+
+Power by type
+device	  208.6
+wire	 1375.2
+
+Power by voltage
+varray	  247.6
+vcc	   54.0
+vperi	 1282.2
+
+Power by operation and location
+nop-periphery	  121.5
+write-core	  865.2
+write-periphery	  597.1
+
+Power by operation and type
+nop-device	   50.8
+nop-wire	   70.7
+write-device	  157.8
+write-wire	 1304.5
+
+Power by location and voltage
+core-varray	  247.6
+core-vperi	  617.5
+periphery-vcc	   54.0
+periphery-vperi	  664.6
+
+Power by generalized operation, type and location
+column-device-core	   80.0
+column-wire-core	  785.2
+column-device-periphery	  128.6
+column-wire-periphery	  590.0

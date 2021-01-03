@@ -1,0 +1,90 @@
+Loop instance: specification-pattern-loop = act pre nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop
+Pattern: act pre nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop nop
+
+
+Detailed power analysis
+component	location	operation	type	voltage	key	power
+baseload	periphery	activate	device	vcc	baseload-periphery-activate-device-vcc	    1.5
+baseload	periphery	nop	device	vcc	baseload-periphery-nop-device-vcc	   51.0
+baseload	periphery	precharge	device	vcc	baseload-periphery-precharge-device-vcc	    1.5
+clock	periphery	activate	device	vperi	clock-periphery-activate-device-vperi	    0.0
+clock	periphery	activate	wire	vperi	clock-periphery-activate-wire-vperi	    0.3
+clock	periphery	nop	device	vperi	clock-periphery-nop-device-vperi	    0.1
+clock	periphery	nop	wire	vperi	clock-periphery-nop-wire-vperi	    9.1
+clock	periphery	precharge	device	vperi	clock-periphery-precharge-device-vperi	    0.0
+clock	periphery	precharge	wire	vperi	clock-periphery-precharge-wire-vperi	    0.3
+control	periphery	activate	device	vperi	control-periphery-activate-device-vperi	    0.8
+control	periphery	activate	wire	vperi	control-periphery-activate-wire-vperi	    2.9
+control	periphery	nop	device	vperi	control-periphery-nop-device-vperi	   12.9
+control	periphery	nop	wire	vperi	control-periphery-nop-wire-vperi	   79.9
+control	periphery	precharge	device	vperi	control-periphery-precharge-device-vperi	    0.8
+control	periphery	precharge	wire	vperi	control-periphery-precharge-wire-vperi	    2.9
+row	core	activate	device	vperi	row-core-activate-device-vperi	    1.9
+row	core	activate	device	vpp	row-core-activate-device-vpp	   13.9
+row	core	activate	wire	vperi	row-core-activate-wire-vperi	    3.5
+row	core	activate	wire	vpp	row-core-activate-wire-vpp	    2.4
+row	core	precharge	device	vperi	row-core-precharge-device-vperi	    1.7
+row	core	precharge	device	vpp	row-core-precharge-device-vpp	   13.9
+row	core	precharge	wire	vperi	row-core-precharge-wire-vperi	    0.3
+row	core	precharge	wire	vpp	row-core-precharge-wire-vpp	    2.4
+senseamp	core	activate	device	varray	senseamp-core-activate-device-varray	  189.4
+senseamp	core	activate	device	vperi	senseamp-core-activate-device-vperi	   25.5
+senseamp	core	activate	wire	vperi	senseamp-core-activate-wire-vperi	    0.4
+senseamp	core	precharge	device	vperi	senseamp-core-precharge-device-vperi	    3.1
+senseamp	core	precharge	wire	vperi	senseamp-core-precharge-wire-vperi	    0.4
+
+Power by component
+baseload	   54.0
+clock	    9.8
+control	  100.3
+row	   39.8
+senseamp	  218.8
+
+Power by location
+core	  258.6
+periphery	  164.1
+
+Power by operation
+activate	  242.4
+nop	  153.0
+precharge	   27.3
+
+Power by type
+device	  318.0
+wire	  104.7
+
+Power by voltage
+varray	  189.4
+vcc	   54.0
+vperi	  146.8
+vpp	   32.5
+
+Power by operation and location
+activate-core	  236.8
+activate-periphery	    5.5
+nop-periphery	  153.0
+precharge-core	   21.8
+precharge-periphery	    5.5
+
+Power by operation and type
+activate-device	  233.0
+activate-wire	    9.4
+nop-device	   64.0
+nop-wire	   89.0
+precharge-device	   21.0
+precharge-wire	    6.3
+
+Power by location and voltage
+core-varray	  189.4
+core-vperi	   36.7
+core-vpp	   32.5
+periphery-vcc	   54.0
+periphery-vperi	  110.1
+
+Power by generalized operation, type and location
+row-device-core	  249.3
+row-wire-core	    9.3
+row-device-periphery	    4.7
+row-wire-periphery	    6.4
+column-device-periphery	   64.0
+column-wire-periphery	   89.0
